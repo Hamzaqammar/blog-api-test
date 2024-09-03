@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "9269eb4c-55a2-4f34-8e60-047a06de38e9",
+		"name": "blog api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "19147046"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/api/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"test\",\r\n    \"email\":\"test@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/register"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"testing@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/login"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "4|x8zl3BBxXrN10R2nCgKzB7RGwWu4y8HHsDcoicZx6c017fc9"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/logout"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "5|6eoNdH9zRnKVhd5Ln0IU0mxQFV5GG1RsGvF4RRG336720850"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/posts/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": ""
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"blog title\",\r\n    \"content\": \"This is the content of the blog.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/posts/"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/posts/{post-id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"blog title updated\",\r\n    \"content\": \"This is the content of the blog updated.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/posts/{post-id}"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/posts/{post-id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": ""
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/posts/{post-id}"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/posts/{post-id}/comments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "6|IHuwFxeoO9nrAVGSHmYiD6vat0kJzJtr6RWWlZ2499b7dc09"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/posts/{post-id}/comments"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/posts/{post-id}/comments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "7|byNbxdTGwaxObnsCdcg1GJDQ4S4SOeA1HsOQC4f2e0ebd00b"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\":\"this is comment test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/posts/2/comments"
+			},
+			"response": []
+		}
+	]
+}
